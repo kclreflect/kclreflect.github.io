@@ -9,9 +9,9 @@ date: 2022-01-08
 
 ### about
 
-The [epsrc `consult`](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/P010105/1) project developed a [decision-support system](https://kclhi.org/consult/demo/?a=UGU2YmFxRUQ6dWtlN2JQRXk=) characterised by its integration of computational argumentation (a form of AI) with wearable device data.
+The [epsrc `consult` project](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/P010105/1) developed a [decision-support system](https://kclhi.org/consult/demo/?a=UGU2YmFxRUQ6dWtlN2JQRXk=) characterised by its integration of computational argumentation (a form of AI) with wearable device data.
 
-`reflect` is an [epsrc iaa project](https://epsrc.ukri.org/innovation/fundingforimpact/impact-acceleration-accounts/) that aims to generalise the wearable data collection logic developed within `consult`, in order to provide this data to other AI-based decision support systems.
+`reflect` is an [epsrc iaa project](https://kclpure.kcl.ac.uk/portal/en/projects/reflect-wearable-sensors-for-personalised-decision-support(a572899d-7799-40fa-a141-4e3efc79b7ca).html) that aims to generalise the wearable data collection logic developed within `consult`, in order to provide this data to other AI-based decision support systems.
 
 In doing so, the impact of wearable data on the operation of these systems, and thus on patient healthcare, can be further explored.
 
@@ -19,7 +19,7 @@ In doing so, the impact of wearable data on the operation of these systems, and 
 *** 
 ### people
 
-| ![martin chapman - pi](/images/people/chapman.jpg "martin chapman - pi") | ![vasa curcin - co-pi](/images/people/curcin.jpg "vasa curcin - co-pi") |
+| [![martin chapman - pi](/images/people/chapman.jpg "martin chapman - pi")](https://martinchapman.co.uk) | [![vasa curcin - co-pi](/images/people/curcin.jpg "vasa curcin - co-pi")](https://kcl.ac.uk/people/vasa-curcin) |
 | - | - |
 | **Martin Chapman** - PI | **Vasa Curcin** - Co-PI |
 
@@ -52,9 +52,9 @@ These components then [combine](#flow) to provide access to the collected data.
 
 `reflect`'s components are as follows:
 
-- [**user**](https://gitlab.com/kclreflect/user) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with reflect
-- [**device**](https://gitlab.com/kclreflect/device) - receives data from the wearable devices, via the device vendor's server
-- [**converter**](https://gitlab.com/kclreflect/converter) - standardises the data received from multiple vendors to [fhir]()
+- [**user**](https://gitlab.com/kclreflect/user) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
+- [**notify**](https://gitlab.com/kclreflect/device/-/tree/main/notify) - receives data from the wearable devices, via the device vendor's server
+- [**convert**](https://gitlab.com/kclreflect/data/-/tree/main/convert) - standardises the data received from multiple vendors to [fhir](https://www.hl7.org/fhir/)
 - [**api**](https://gitlab.com/kclreflect/api) - allows decision-support systems to access the collected data
 
 Each component is deployed as either a serverless function or as a microservice.
@@ -84,7 +84,7 @@ This configuration can be viewed [here](https://gitlab.com/kclreflect/config).
 
 #### flow
 
-To provide decision-support systems with access to wearable device data, reflect's components combine as follows:
+To provide decision-support systems with access to wearable device data, `reflect`'s components combine as follows:
 
 **1. device connection**
 
@@ -96,7 +96,7 @@ A user, or a gp on their behalf, navigates to the `reflect` web application in o
 
 {{< figure src="/images/software/add.png" >}}
 
-When new data is collected by a patient's device, it is forwarded to the `reflect` servers. Here, the data is standardised to fhir, and stored in a [HAPI FHIR]() server.
+When new data is collected by a patient's device, it is forwarded to the `reflect` servers. Here, the data is standardised to fhir, and stored in a [HAPI FHIR](https://hapifhir.io/) server.
 
 **3. data retrieval**
 
