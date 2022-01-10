@@ -5,38 +5,108 @@ date: 2022-01-08
 
 ### reflect - **an epsrc iaa project exploring the impact of wearable data on personalised decision support**
 
-&nbsp;  
+![metadvice](/images/wearable.png "metadvice")
 
 ### about
 
-The [epsrc consult](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/P010105/1) project developed a [decision-support system](https://kclhi.org/consult/demo/?a=UGU2YmFxRUQ6dWtlN2JQRXk=) characterised by its integration of computational argumentation (a form of AI) with wearable device data.
+The [epsrc `consult`](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/P010105/1) project developed a [decision-support system](https://kclhi.org/consult/demo/?a=UGU2YmFxRUQ6dWtlN2JQRXk=) characterised by its integration of computational argumentation (a form of AI) with wearable device data.
 
-reflect is an [epsrc iaa project](https://epsrc.ukri.org/innovation/fundingforimpact/impact-acceleration-accounts/) that aims to generalise the wearable device logic developed within consult, in order to support other decision support systems.
+`reflect` is an [epsrc iaa project](https://epsrc.ukri.org/innovation/fundingforimpact/impact-acceleration-accounts/) that aims to generalise the wearable data collection logic developed within `consult`, in order to provide this data to other AI-based decision support systems.
 
 In doing so, the impact of wearable data on the operation of these systems, and thus on patient healthcare, can be further explored.
 
-&nbsp; 
-
-### partners
-
-&nbsp; 
-
+&nbsp;
+*** 
 ### people
 
-&nbsp; 
+| ![martin chapman - pi](/images/people/chapman.jpg "martin chapman - pi") | ![vasa curcin - co-pi](/images/people/curcin.jpg "vasa curcin - co-pi") |
+| - | - |
+| **Martin Chapman** - PI | **Vasa Curcin** - Co-PI |
 
+&nbsp;
+*** 
+### partners
+
+|[![metadvice](/images/partners/metadvice.jpg "metadvice")](https://www.metadvice.com/)|
+| - |
+
+&nbsp;
+*** 
+### devices
+
+|[![metadvice](/images/devices/withings.jpg "withings")](https://www.withings.com/uk/en/)|
+| - |
+
+&nbsp;
+
+&nbsp;
+*** 
 ### software
+
+To generalise  `consult`'s wearable data logic, reflect packages this logic as a set of new [components](#components) - developed on top of a new [software stack](#stack) - which are designed to be deployed to a newly defined [server architecture](#architecture).
+These components then [combine](#flow) to provide access to the collected data.  
+
+&nbsp;
+
+#### components
+
+`reflect`'s components are as follows:
+
+- [**user**](https://gitlab.com/kclreflect/user) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with reflect
+- [**device**](https://gitlab.com/kclreflect/device) - receives data from the wearable devices, via the device vendor's server
+- [**converter**](https://gitlab.com/kclreflect/converter) - standardises the data received from multiple vendors to [fhir]()
+- [**api**](https://gitlab.com/kclreflect/api) - allows decision-support systems to access the collected data
+
+Each component is deployed as either a serverless function or as a microservice.
+
+&nbsp;
+
+#### stack
+
+`reflect`'s components are built on top of the following software stack:
+
+{{< stackshare data-theme="light" data-layers="1,2,3,4" data-stack-embed="true" href="https://embed.stackshare.io/stacks/embed/a25989f945011285c2d47a74255c51" >}}
 
 &nbsp; 
 
 #### architecture
 
-&nbsp; 
+`reflect`'s software components are designed to be deployed to a kubernetes cluster (or to minikube for testing), which can be realised by a cloud provider such as AWS as follows:
 
-#### stack
+{{< figure src="/images/software/architecture.png" >}}
+
+Here, a VPC provides both public and private subnets, with the latter holding the replicated nodes to which `reflect`'s software components are deployed.
+These components communicate via an internal load balancer, while external requests (such as incoming device data) are received via a web-facing load balancer.
+
+This configuration can be viewed [here](https://gitlab.com/kclreflect/config).
 
 &nbsp; 
 
 #### flow
 
-&nbsp; 
+To provide decision-support systems with access to wearable device data, reflect's components combine as follows:
+
+**1. device connection**
+
+{{< figure src="/images/software/authenticate.png" >}}
+
+A user, or a gp on their behalf, navigates to the `reflect` web application in order to associate a unique ID for the patient (such as an NHS number) with the data collected from various devices, which they proceed to authorise via each device vendor's server.
+
+**2. data storage**
+
+{{< figure src="/images/software/add.png" >}}
+
+When new data is collected by a patient's device, it is forwarded to the `reflect` servers. Here, the data is standardised to fhir, and stored in a [HAPI FHIR]() server.
+
+**3. data retrieval**
+
+{{< figure src="/images/software/get.png" >}}
+
+Using the patient ID (collected separately), a third-party decision support system calls the `reflect` servers for the latest data available on a patient.
+
+&nbsp;
+
+#### screenshots
+
+{{< figure src="/images/screenshots/signup.png" >}}
+{{< figure src="/images/screenshots/services.png" >}}

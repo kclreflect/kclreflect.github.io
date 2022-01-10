@@ -23,6 +23,7 @@ pygmentCodeFences = true
   rss = false
   comments = false
   custom_css = ["css/style.css"]
+  custom_js = ["https://cdn1.stackshare.io/javascripts/client-code.js", "js/js.js"]
   lastchange=2022
 
 #[[Params.bigimg]]
@@ -40,42 +41,58 @@ pygmentCodeFences = true
   gitlab = "kclreflect"
   twitter = "martin_chap_man"
 
-
 [[menu.main]]
     name = "about"
     url = "#about"
     weight = 1
 
 [[menu.main]]
-    name = "partners"
-    url = "#partners"
-    weight = 1
-
-[[menu.main]]
     name = "people"
     url = "#people"
-    weight = 1
+    weight = 2
+
+[[menu.main]]
+    name = "partners"
+    url = "#partners"
+    weight = 3
+
+[[menu.main]]
+    name = "devices"
+    url = "#devices"
+    weight = 4
 
 [[menu.main]]
     identifier = "software"
     name = "software"
     url = "#software"
-    weight = 2
+    weight = 5
 
 [[menu.main]]
     parent = "software"
-    name = "architecture"
-    url = "#architecture"
+    name = "components"
+    url = "#components"
     weight = 1
 
 [[menu.main]]
     parent = "software"
     name = "stack"
     url = "#stack"
-    weight = 1
+    weight = 2
+
+[[menu.main]]
+    parent = "software"
+    name = "architecture"
+    url = "#architecture"
+    weight = 3
 
 [[menu.main]]
     parent = "software"
     name = "flow"
     url = "#flow"
-    weight = 1
+    weight = 4
+
+[[menu.main]]
+    parent = "software"
+    name = "screenshots"
+    url = "#screenshots"
+    weight = 5

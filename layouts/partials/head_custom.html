@@ -2,5 +2,5 @@
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
 {{ range .Site.Params.custom_js -}}
-    <script type="text/javascript" src="{{ . | absURL }}"></script>
+    <script defer type="text/javascript" src="{{ . | absURL }}"></script>
 {{- end }}
