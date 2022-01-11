@@ -19,18 +19,15 @@ In doing so, the impact of wearable data on the operation of these systems, and 
 *** 
 ### people
 
-| [![martin chapman - pi](/images/people/chapman.jpg "martin chapman - pi")](https://martinchapman.co.uk) | [![vasa curcin - co-pi](/images/people/curcin.jpg "vasa curcin - co-pi")](https://kcl.ac.uk/people/vasa-curcin) |
-| - | - |
-| **Martin Chapman** - PI | **Vasa Curcin** - Co-PI |
-
-&nbsp;
+| [![martin chapman - pi](/images/people/chapman.jpg "martin chapman - pi")](https://martinchapman.co.uk) | [![vasa curcin - co-pi](/images/people/curcin.jpg "vasa curcin - co-pi")](https://kcl.ac.uk/people/vasa-curcin) | [![abigail g-medhin - data scientist](/images/people/g-medhin.jpg "abigail g-medhin - data-scientist")]() | [![abhiram ravikuar - research software engineer](/images/people/ravikumar.jpg "abhiram ravikumar - research software engineer")]() |
+| - | - | - | - |
+| **Dr. Martin Chapman** | **Dr. Vasa Curcin** | **Abigail G\-Medhin** | **Abhiram Ravikumar** |
+|   PI   | Co-PI | Data Scientist | Research Software Engineer |
 
 ### partners
 
 |[![metadvice](/images/partners/metadvice.jpg "metadvice")](https://www.metadvice.com/)|
 | - |
-
-&nbsp;
 
 ### devices
 

@@ -21,4 +21,10 @@ figure img {
 
 td, th, tr {
   border: none !important;
+  background-color: inherit !important;
+  text-align: center !important;
+}
+
+th, td {
+  width: 200px;
 }
