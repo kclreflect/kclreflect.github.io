@@ -47,10 +47,10 @@ These components then [combine](#flow) to collect, and provide access to, wearab
 
 `reflect`'s components are as follows:
 
-- [`user`](https://gitlab.com/kclreflect/user) (microservice) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
-- [`notify`](https://gitlab.com/kclreflect/device/-/tree/main/notify) (function) - receives data from the wearable devices, via the device vendors' servers
-- [`convert`](https://gitlab.com/kclreflect/data/-/tree/main/convert) (function) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/)
-- [`api`](https://gitlab.com/kclreflect/api) (microservice) - allows decision-support systems to access the collected data
+- [`user`](https://github.com/kclreflect/user) (microservice) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
+- [`notify`](https://github.com/kclreflect/device/tree/main/notify) (function) - receives data from the wearable devices, via the device vendors' servers
+- [`convert`](https://github.com/kclreflect/data/tree/main/convert) (function) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/)
+- [`api`](https://github.com/kclreflect/api) (microservice) - allows decision-support systems to access the collected data
 
 &nbsp;
 
@@ -71,7 +71,7 @@ These components then [combine](#flow) to collect, and provide access to, wearab
 Here, a VPC provides both public and private subnets, with the latter holding the replicated nodes to which `reflect`'s software components are deployed.
 These components communicate via an internal load balancer, while external requests (such as incoming device data) are received via a web-facing load balancer.
 
-This configuration can be viewed [here](https://gitlab.com/kclreflect/config).
+This configuration can be viewed [here](https://github.com/kclreflect/config).
 
 &nbsp; 
 

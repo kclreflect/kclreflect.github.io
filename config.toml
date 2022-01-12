@@ -38,7 +38,7 @@ pygmentCodeFences = true
 
 [Author]
   name = "Martin Chapman"
-  gitlab = "kclreflect"
+  github = "kclreflect"
   twitter = "martin_chap_man"
 
 [[menu.main]]
