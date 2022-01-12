@@ -5,7 +5,7 @@ date: 2022-01-08
 
 ### reflect - **an epsrc iaa project exploring the impact of wearable data on personalised decision support**
 
-![metadvice](/images/wearable.png "metadvice")
+![metadvice](/img/wearable.png "metadvice")
 
 ### about
 
@@ -19,19 +19,19 @@ In doing so, the impact of wearable data on the operation of these systems, and 
 *** 
 ### people
 
-| [![martin chapman - pi](/images/people/chapman.jpg "martin chapman - pi")](https://martinchapman.co.uk) | [![vasa curcin - co-pi](/images/people/curcin.jpg "vasa curcin - co-pi")](https://kcl.ac.uk/people/vasa-curcin) | [![abigail g-medhin - data scientist](/images/people/g-medhin.jpg "abigail g-medhin - data-scientist")]() | [![abhiram ravikuar - research software engineer](/images/people/ravikumar.jpg "abhiram ravikumar - research software engineer")]() |
+| [![martin chapman - pi](/img/people/chapman.jpg "martin chapman - pi")](https://martinchapman.co.uk) | [![vasa curcin - co-pi](/img/people/curcin.jpg "vasa curcin - co-pi")](https://kcl.ac.uk/people/vasa-curcin) | [![abigail g-medhin - data scientist](/img/people/g-medhin.jpg "abigail g-medhin - data-scientist")]() | [![abhiram ravikuar - research software engineer](/img/people/ravikumar.jpg "abhiram ravikumar - research software engineer")]() |
 | - | - | - | - |
 | **Dr. Martin {{< line_break >}} Chapman** | **Dr. Vasa {{< line_break >}} Curcin** | **Abigail {{< line_break >}} G\-Medhin** | **Abhiram {{< line_break >}} Ravikumar** |
 |   PI   | Co-PI | Data Scientist | Research Software Engineer |
 
 ### partners
 
-|[![metadvice](/images/partners/metadvice.jpg "metadvice")](https://www.metadvice.com/)|
+|[![metadvice](/img/partners/metadvice.jpg "metadvice")](https://www.metadvice.com/)|
 | - |
 
 ### devices
 
-|[![metadvice](/images/devices/withings.jpg "withings")](https://www.withings.com/uk/en/)|
+|[![metadvice](/img/devices/withings.jpg "withings")](https://www.withings.com/uk/en/)|
 | - |
 
 &nbsp;
@@ -66,7 +66,7 @@ These components then [combine](#flow) to collect, and provide access to, wearab
 
 `reflect`'s software components are designed to be deployed to a Kubernetes cluster (or to Minikube for testing), which can be realised by a cloud provider such as AWS as follows:
 
-{{< figure src="/images/software/architecture.png" >}}
+{{< figure src="/img/software/architecture.png" >}}
 
 Here, a VPC provides both public and private subnets, with the latter holding the replicated nodes to which `reflect`'s software components are deployed.
 These components communicate via an internal load balancer, while external requests (such as incoming device data) are received via a web-facing load balancer.
@@ -81,19 +81,19 @@ To provide decision-support systems with access to wearable device data, `reflec
 
 **1. device connection**
 
-{{< figure src="/images/software/authenticate.png" >}}
+{{< figure src="/img/software/authenticate.png" >}}
 
 A user navigates to the `reflect` web application in order to associate a unique patient ID (such as an NHS number) with the data collected from various devices, which they proceed to authorise via each device vendor's server.
 
 **2. data storage**
 
-{{< figure src="/images/software/add.png" >}}
+{{< figure src="/img/software/add.png" >}}
 
 When new data is collected by a patient's device, it is forwarded to the `reflect` servers. Here, the data is securely cached before being standardised to `fhir`, and then stored in a [HAPI FHIR](https://hapifhir.io/) server.
 
 **3. data retrieval**
 
-{{< figure src="/images/software/get.png" >}}
+{{< figure src="/img/software/get.png" >}}
 
 Using a patient ID (collected separately), a third-party decision-support system calls the `reflect` servers for the latest data available on that patient.
 
@@ -101,5 +101,5 @@ Using a patient ID (collected separately), a third-party decision-support system
 
 #### screenshots
 
-{{< figure src="/images/screenshots/signup.png" >}}
-{{< figure src="/images/screenshots/services.png" >}}
+{{< figure src="/img/screenshots/signup.png" >}}
+{{< figure src="/img/screenshots/services.png" >}}
