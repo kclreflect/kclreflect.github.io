@@ -45,12 +45,14 @@ These components then [combine](#flow) to collect, and provide access to, wearab
 
 #### components
 
-`reflect`'s components are as follows:
+`reflect`'s core components are as follows:
 
 - [`user`](https://gitlab.com/kclreflect/user) (microservice) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
 - [`notify`](https://gitlab.com/kclreflect/device/-/tree/main/notify) (function) - receives data from the wearable devices, via the device vendors' servers
 - [`convert`](https://gitlab.com/kclreflect/data/-/tree/main/convert) (function) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/)
 - [`api`](https://gitlab.com/kclreflect/api) (microservice) - allows decision-support systems to access the collected data
+
+View [all `reflect` software repositories](https://gitlab.com/kclreflect).
 
 &nbsp;
 
