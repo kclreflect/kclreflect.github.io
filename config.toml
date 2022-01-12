@@ -1,4 +1,4 @@
-baseurl = "https://kclreflect.github.io"
+baseurl = "https://reflectproject.co.uk"
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
