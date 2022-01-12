@@ -52,7 +52,7 @@ These components then [combine](#flow) to collect, and provide access to, wearab
 - [`convert`](https://github.com/kclreflect/data/tree/main/convert) (function) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/)
 - [`api`](https://github.com/kclreflect/api) (microservice) - allows decision-support systems to access the collected data
 
-View [all `reflect` software repositories](https://gitlab.com/kclreflect).
+View [all `reflect` software repositories](https://github.com/kclreflect).
 
 &nbsp;
 
