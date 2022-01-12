@@ -1,0 +1,30 @@
+.well {
+  all:unset;
+}
+
+.navbar {
+  background: #fff;
+}
+
+.container img {
+  width: 150px;
+}
+
+figure img {
+  width: 600px !important;
+}
+
+.container table img {
+  border: 1px solid #EAEAEA;
+  border-radius: 50%;
+}
+
+td, th, tr {
+  border: none !important;
+  background-color: inherit !important;
+  text-align: center !important;
+}
+
+th, td {
+  width: 200px;
+}
