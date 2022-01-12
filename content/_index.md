@@ -21,7 +21,7 @@ In doing so, the impact of wearable data on the operation of these systems, and 
 
 | [![martin chapman - pi](/images/people/chapman.jpg "martin chapman - pi")](https://martinchapman.co.uk) | [![vasa curcin - co-pi](/images/people/curcin.jpg "vasa curcin - co-pi")](https://kcl.ac.uk/people/vasa-curcin) | [![abigail g-medhin - data scientist](/images/people/g-medhin.jpg "abigail g-medhin - data-scientist")]() | [![abhiram ravikuar - research software engineer](/images/people/ravikumar.jpg "abhiram ravikumar - research software engineer")]() |
 | - | - | - | - |
-| **Dr. Martin Chapman** | **Dr. Vasa Curcin** | **Abigail G\-Medhin** | **Abhiram Ravikumar** |
+| **Dr. Martin {{< line_break >}} Chapman** | **Dr. Vasa {{< line_break >}} Curcin** | **Abigail {{< line_break >}} G\-Medhin** | **Abhiram {{< line_break >}} Ravikumar** |
 |   PI   | Co-PI | Data Scientist | Research Software Engineer |
 
 ### partners
@@ -47,12 +47,10 @@ These components then [combine](#flow) to collect, and provide access to, wearab
 
 `reflect`'s components are as follows:
 
-- [`user`](https://gitlab.com/kclreflect/user) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
-- [`notify`](https://gitlab.com/kclreflect/device/-/tree/main/notify) - receives data from the wearable devices, via the device vendors' servers
-- [`convert`](https://gitlab.com/kclreflect/data/-/tree/main/convert) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/)
-- [`api`](https://gitlab.com/kclreflect/api) - allows decision-support systems to access the collected data
-
-Each component is deployed as either a serverless function or as a microservice.
+- [`user`](https://gitlab.com/kclreflect/user) (microservice) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
+- [`notify`](https://gitlab.com/kclreflect/device/-/tree/main/notify) (function) - receives data from the wearable devices, via the device vendors' servers
+- [`convert`](https://gitlab.com/kclreflect/data/-/tree/main/convert) (function) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/)
+- [`api`](https://gitlab.com/kclreflect/api) (microservice) - allows decision-support systems to access the collected data
 
 &nbsp;
 
