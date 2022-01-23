@@ -5,13 +5,13 @@ date: 2022-01-08
 
 ### reflect - **an epsrc iaa project exploring the impact of wearable data on personalised decision support**
 
-![metadvice](/img/wearable.png "metadvice")
+![wearable](/img/wearable.png "wearable")
 
 ### about
 
 The [epsrc `consult` project](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/P010105/1) developed a [decision-support system](https://kclhi.org/consult/demo/?a=UGU2YmFxRUQ6dWtlN2JQRXk=) characterised by its integration of computational argumentation (a form of AI) with wearable device data.
 
-`reflect` is an [epsrc iaa project](https://kclpure.kcl.ac.uk/portal/en/projects/reflect-wearable-sensors-for-personalised-decision-support(a572899d-7799-40fa-a141-4e3efc79b7ca).html) that aims to generalise the wearable data collection logic developed within `consult`, in order to provide this data to other AI-based decision-support systems.
+`reflect` is an [epsrc iaa project](https://kclpure.kcl.ac.uk/portal/en/projects/reflect-wearable-sensors-for-personalised-decision-support(a572899d-7799-40fa-a141-4e3efc79b7ca).html) that aims to generalise and optimise the wearable data collection logic developed within `consult`, in order to provide this data to other AI-based decision-support systems.
 
 In doing so, the impact of wearable data on the operation of these systems, and thus on personalised patient healthcare, can be further explored.
 
@@ -31,8 +31,8 @@ In doing so, the impact of wearable data on the operation of these systems, and 
 
 ### devices
 
-|[![metadvice](/img/devices/withings.jpg "withings")](https://www.withings.com/uk/en/)|
-| - |
+|[![withings](/img/devices/withings.jpg "withings")](https://www.withings.com/uk/en/)|[![garmin](/img/devices/garmin.jpg "garmin")](https://www.garmin.com/en-GB/)|
+| - | - |
 
 &nbsp;
 *** 
@@ -47,9 +47,9 @@ These components then [combine](#flow) to collect, and provide access to, wearab
 
 `reflect`'s core components are as follows:
 
-- [`user`](https://github.com/kclreflect/user) (microservice) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
-- [`notify`](https://github.com/kclreflect/device/tree/main/notify) (function) - receives data from the wearable devices, via the device vendors' servers
-- [`convert`](https://github.com/kclreflect/data/tree/main/convert) (function) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/)
+- [`user`](https://github.com/kclreflect/user) (microservice) - presents a patient-optimised interface that allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with `reflect`
+- [`notify`](https://github.com/kclreflect/device/-/tree/main/notify) (function) - receives data from the wearable devices, via the device vendors' servers
+- [`convert`](https://github.com/kclreflect/data/-/tree/main/convert) (function) - standardises the data received from multiple vendors to [`fhir`](https://www.hl7.org/fhir/), to ensure a unified data format is presented to third-party systems
 - [`api`](https://github.com/kclreflect/api) (microservice) - allows decision-support systems to access the collected data
 
 View [all `reflect` software repositories](https://github.com/kclreflect).
@@ -66,7 +66,8 @@ View [all `reflect` software repositories](https://github.com/kclreflect).
 
 #### architecture
 
-`reflect`'s software components are designed to be deployed to a Kubernetes cluster (or to Minikube for testing), which can be realised by a cloud provider such as AWS as follows:
+`reflect`'s software components are designed to be deployed to a Kubernetes cluster (or to Minikube for testing), to ensure the scalability demands of external reasoners are met.
+This cluster can be realised by a cloud provider such as AWS as follows:
 
 {{< figure src="/img/software/architecture.png" >}}
 
