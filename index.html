@@ -7,11 +7,9 @@
 <meta property="og:title" content="reflect | epsrc iaa">
 <meta name=twitter:title content="reflect | epsrc iaa">
 <meta name=description content="reflect - an epsrc iaa project exploring the impact of wearable data on personalised decision support about The epsrc consult project developed a decision-support system characterised by its integration of computational argumentation (a form of AI) with wearable device data.
-reflect is an epsrc iaa project that aims to generalise the wearable data collection logic developed within consult, in order to provide this data to other AI-based decision-support systems.
-In doing so, the impact of wearable data on the operation of these systems, and thus on personalised patient healthcare, can be further explored.">
+reflect is an epsrc iaa project that aims to generalise and optimise the wearable data collection logic developed within consult, in order to provide this data to other AI-based decision-support systems.">
 <meta property="og:description" content="reflect - an epsrc iaa project exploring the impact of wearable data on personalised decision support about The epsrc consult project developed a decision-support system characterised by its integration of computational argumentation (a form of AI) with wearable device data.
-reflect is an epsrc iaa project that aims to generalise the wearable data collection logic developed within consult, in order to provide this data to other AI-based decision-support systems.
-In doing so, the impact of wearable data on the operation of these systems, and thus on personalised patient healthcare, can be further explored.">
+reflect is an epsrc iaa project that aims to generalise and optimise the wearable data collection logic developed within consult, in order to provide this data to other AI-based decision-support systems.">
 <meta name=twitter:description content="reflect - an epsrc iaa project exploring the impact of wearable data on personalised decision support about The epsrc consult project developed a decision-support system characterised by its …">
 <meta name=author content="Martin Chapman">
 <link href=https://reflectproject.co.uk/img/favicon.ico rel=icon type=image/x-icon>
@@ -87,10 +85,10 @@ In doing so, the impact of wearable data on the operation of these systems, and 
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 <div class=well>
 <h3 id=reflect---an-epsrc-iaa-project-exploring-the-impact-of-wearable-data-on-personalised-decision-support>reflect - <strong>an epsrc iaa project exploring the impact of wearable data on personalised decision support</strong></h3>
-<p><img src=https://reflectproject.co.uk/img/wearable.png alt=metadvice title=metadvice></p>
+<p><img src=https://reflectproject.co.uk/img/wearable.png alt=wearable title=wearable></p>
 <h3 id=about>about</h3>
 <p>The <a href="https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/P010105/1">epsrc <code>consult</code> project</a> developed a <a href="https://kclhi.org/consult/demo/?a=UGU2YmFxRUQ6dWtlN2JQRXk=">decision-support system</a> characterised by its integration of computational argumentation (a form of AI) with wearable device data.</p>
-<p><code>reflect</code> is an <a href=https://kclpure.kcl.ac.uk/portal/en/projects/reflect-wearable-sensors-for-personalised-decision-support(a572899d-7799-40fa-a141-4e3efc79b7ca).html>epsrc iaa project</a> that aims to generalise the wearable data collection logic developed within <code>consult</code>, in order to provide this data to other AI-based decision-support systems.</p>
+<p><code>reflect</code> is an <a href=https://kclpure.kcl.ac.uk/portal/en/projects/reflect-wearable-sensors-for-personalised-decision-support(a572899d-7799-40fa-a141-4e3efc79b7ca).html>epsrc iaa project</a> that aims to generalise and optimise the wearable data collection logic developed within <code>consult</code>, in order to provide this data to other AI-based decision-support systems.</p>
 <p>In doing so, the impact of wearable data on the operation of these systems, and thus on personalised patient healthcare, can be further explored.</p>
 <p> </p>
 <hr>
@@ -135,7 +133,8 @@ Ravikumar</strong></td>
 <table>
 <thead>
 <tr>
-<th><a href=https://www.withings.com/uk/en/><img src=https://reflectproject.co.uk/img/devices/withings.jpg alt=metadvice title=withings></a></th>
+<th><a href=https://www.withings.com/uk/en/><img src=https://reflectproject.co.uk/img/devices/withings.jpg alt=withings title=withings></a></th>
+<th><a href=https://www.garmin.com/en-GB/><img src=https://reflectproject.co.uk/img/devices/garmin.jpg alt=garmin title=garmin></a></th>
 </tr>
 </thead>
 </table>
@@ -148,9 +147,9 @@ These components then <a href=#flow>combine</a> to collect, and provide access t
 <h4 id=components>components</h4>
 <p><code>reflect</code>&rsquo;s core components are as follows:</p>
 <ul>
-<li><a href=https://github.com/kclreflect/user><code>user</code></a> (microservice) - allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with <code>reflect</code></li>
-<li><a href=https://github.com/kclreflect/device/tree/main/notify><code>notify</code></a> (function) - receives data from the wearable devices, via the device vendors' servers</li>
-<li><a href=https://github.com/kclreflect/data/tree/main/convert><code>convert</code></a> (function) - standardises the data received from multiple vendors to <a href=https://www.hl7.org/fhir/><code>fhir</code></a></li>
+<li><a href=https://github.com/kclreflect/user><code>user</code></a> (microservice) - presents a patient-optimised interface that allows users, or a GP on their behalf, to connect their wearable devices - via the device vendor - with <code>reflect</code></li>
+<li><a href=https://github.com/kclreflect/device/-/tree/main/notify><code>notify</code></a> (function) - receives data from the wearable devices, via the device vendors' servers</li>
+<li><a href=https://github.com/kclreflect/data/-/tree/main/convert><code>convert</code></a> (function) - standardises the data received from multiple vendors to <a href=https://www.hl7.org/fhir/><code>fhir</code></a>, to ensure a unified data format is presented to third-party systems</li>
 <li><a href=https://github.com/kclreflect/api><code>api</code></a> (microservice) - allows decision-support systems to access the collected data</li>
 </ul>
 <p>View <a href=https://github.com/kclreflect>all <code>reflect</code> software repositories</a>.</p>
@@ -160,7 +159,8 @@ These components then <a href=#flow>combine</a> to collect, and provide access t
 <a data-theme=light data-layers=1,2,3,4 data-stack-embed=true href=https://embed.stackshare.io/stacks/embed/a25989f945011285c2d47a74255c51 alt></a>
 <p> </p>
 <h4 id=architecture>architecture</h4>
-<p><code>reflect</code>&rsquo;s software components are designed to be deployed to a Kubernetes cluster (or to Minikube for testing), which can be realised by a cloud provider such as AWS as follows:</p>
+<p><code>reflect</code>&rsquo;s software components are designed to be deployed to a Kubernetes cluster (or to Minikube for testing), to ensure the scalability demands of external reasoners are met.
+This cluster can be realised by a cloud provider such as AWS as follows:</p>
 <link rel=stylesheet href=https://reflectproject.co.uk/css/hugo-easy-gallery.css>
 <div class=box>
 <figure itemprop=associatedMedia itemscope itemtype=http://schema.org/ImageObject>
