@@ -36,6 +36,14 @@ In doing so, the impact of wearable data on the operation of these systems, and 
 
 &nbsp;
 *** 
+### publications
+
+M. Chapman, A. G-Medhin, I. Sassoon, N. Kokciyan, E. Sklar, V. Curcin  
+**Using Microservices to Design Patient-facing Research Software**  
+IEEE 18th International Conference on eScience (2022)  
+
+&nbsp;
+*** 
 ### software
 
 To generalise  `consult`'s wearable data logic, `reflect` packages this logic as a set of new [components](#components) - developed on top of a new [software stack](#stack) - that are designed to be deployed to a newly defined [server architecture](#architecture).

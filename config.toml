@@ -62,10 +62,16 @@ pygmentCodeFences = true
     weight = 4
 
 [[menu.main]]
+    identifier = "publications"
+    name = "publications"
+    url = "#publications"
+    weight = 5
+
+[[menu.main]]
     identifier = "software"
     name = "software"
     url = "#software"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     parent = "software"
